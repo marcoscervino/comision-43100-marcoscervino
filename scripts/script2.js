@@ -36,106 +36,7 @@ function SumaTotal(subtotal){
     alert("El total en el carro de compras es $"+total);}
 
 
-//Declaro las class para cargar los objetos de los array
 
-class cerveza{
-    constructor(id, marca, nombre, tamaño, precio) {
-        this.id = id;
-        this.marca   = marca;
-        this.nombre  = nombre;
-        this.tamaño = tamaño;
-        this.precio  = precio;
-    }
-}
-
-class gaseosa{
-    constructor(id, marca, nombre, tamaño, precio) {
-        this.id = id;
-        this.marca   = marca;
-        this.nombre  = nombre;
-        this.tamaño = tamaño;
-        this.precio  = precio;
-    }
-}
-
-class gin{
-    constructor(id, marca, nombre, tamaño, precio) {
-        this.id = id;
-        this.marca   = marca;
-        this.nombre  = nombre;
-        this.tamaño = tamaño;
-        this.precio  = precio;
-    }
-}
-
-class vodka{
-    constructor(id, marca, nombre, tamaño, precio) {
-        this.id = id;
-        this.marca   = marca;
-        this.nombre  = nombre;
-        this.tamaño = tamaño;
-        this.precio  = precio;
-    }
-}
-
-class vino{
-    constructor(id, marca, nombre, tamaño, precio) {
-        this.id = id;
-        this.marca   = marca;
-        this.nombre  = nombre;
-        this.tamaño = tamaño;
-        this.precio  = precio;
-    }
-}
-
-
-
-//Declaro un array de cervezas y cargo elementos
-const cervezas = [];
-cervezas.push(new cerveza (1, "Heineken","Heineken Rubia", "473ml", 360));
-cervezas.push(new cerveza (2, "Stella Artois","Stella Rubia", "473ml", 340));
-cervezas.push(new cerveza (3, "Stella Artois","Stella Blanche", "473ml", 350));
-cervezas.push(new cerveza (4, "Stella Artois","Stella Noire", "473ml", 345));
-
-
-
-//Declaro un array de gaseosesas y cargo elementos
-const gaseosas = [];
-gaseosas.push(new gaseosa (1, "Schweppes","Schweppes pomelo", "1000ml", 460));
-gaseosas.push(new gaseosa (2, "Schweppes","Schweppes tonica", "1000ml", 430));
-gaseosas.push(new gaseosa (3, "Coca Cola","Coca Cola Clasica", "1500ml", 510));
-gaseosas.push(new gaseosa (4, "Coca Cola","Coca Cola Zero", "1500ml", 490));
-
-
-
-
-//Declaro un array de gin y cargo elementos
-const gines = [];
-gines.push(new gin (1, "Gordons","Gordons clasic", "750ml", 2660));
-gines.push(new gin (2, "Beefeater","Beefeater clasic", "1000ml", 5040));
-gines.push(new gin (3, "Beefeater","Beefeater orange", "1000ml", 7040));
-gines.push(new gin (4, "Brighton","Brighton Clasic", "1000ml", 2190));
-
-
-
-
-
-//Declaro un array de vodkas y cargo elementos
-const vodkas = [];
-vodkas.push(new vodka (1, "Smirnoff","Smirnoff clasic", "1000ml", 3560));
-vodkas.push(new vodka (2, "Smirnoff","Smirnoff Apple", "1000ml", 3950));
-vodkas.push(new vodka (3, "Absolut","Absolut clasic", "1000ml", 7500));
-vodkas.push(new vodka (4, "Absolut","Absolut raspberry", "1000ml", 8200));
-
-
-
-
-//Declaro un array de vinos y cargo elementos
-const vinos = [];
-vinos.push(new vino (1, "Luigi bosca","Luigi bosca malbec", "750ml", 4500));
-vinos.push(new vino (2, "Luigi bosca","Luigi bosca cabernet sauvignon", "750ml", 4400));
-vinos.push(new vino (3, "Nieto senetiner","Nieto senetiner malbec", "750ml", 3200));
-vinos.push(new vino (4, "Nieto senetiner","Nieto senetiner cabernet franc", "750ml", 3500));
 
 //Declaro un filtrado para mostrar los elementos por prompt
 const concatenacionCervezas = cervezas.map((cerveza, indice) => `${indice + 1} - ${cerveza.nombre} x${cerveza.tamaño} $ ${cerveza.precio}`).join('\n');
@@ -324,3 +225,49 @@ tienda = prompt("Para comprar otro producto, digite S")
 if (tienda != "s"){
     alert("Gracias por tu compra 😎");
 }
+
+const resumenCervezas = cervezas.map((elem) => {
+    return {
+        nombre: elem.nombre,
+        tamaño: elem.tamaño,
+        precio: elem.precio
+    }
+})
+console.table(resumenCervezas)
+
+const resumenGaseosas = gaseosas.map((elem) => {
+    return {
+        nombre: elem.nombre,
+        tamaño: elem.tamaño,
+        precio: elem.precio
+    }
+})
+console.table(resumenGaseosas)
+
+const resumenGines = gines.map((elem) => {
+    return {
+        nombre: elem.nombre,
+        tamaño: elem.tamaño,
+        precio: elem.precio
+    }
+})
+console.table(resumenGines)
+
+const resumenVodkas = vodkas.map((elem) => {
+    return {
+        nombre: elem.nombre,
+        tamaño: elem.tamaño,
+        precio: elem.precio
+    }
+})
+console.table(resumenVodkas)
+
+const resumenVinos = vinos.map((elem) => {
+    return {
+        nombre: elem.nombre,
+        tamaño: elem.tamaño,
+        precio: elem.precio
+    }
+})
+console.table(resumenVinos)
+

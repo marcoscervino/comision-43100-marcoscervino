@@ -7,16 +7,15 @@ let tablaBody = document.getElementById('tablabody');
 
 function renderizarProductos(listaProds){
     //vaciamos en contenedor para evitar duplicados
-    
     //cargamos las cartas de los productos solicitados
     for(const prod of listaProds){
         contenedorProds.innerHTML+=`
-            <div class="card col-md-3">
+            <div class="card border-secondary text-center col-md-3" >
                 <img class="card-img-top" src=${prod.foto} alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">${prod.nombre} x${prod.tamaño}</h5>
                     <p class="card-text">$ ${prod.precio}</p>
-                    <button id=${prod.id} class="btn btn-primary compra">Comprar</button>
+                    <button id=${prod.id} class="btn btn-dark compra">Comprar</button>
                 </div>
             </div>
         `;

@@ -10,7 +10,7 @@ function renderizarProductos(listaProds){
     //cargamos las cartas de los productos solicitados
     for(const prod of listaProds){
         contenedorProds.innerHTML+=`
-            <div class="card border-secondary text-center col-md-3" >
+            <div class="card mt-3 mb-3 ms-2 mx-2 border-dark text-center col-md-2" >
                 <img class="card-img-top" src=${prod.foto} alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">${prod.nombre} x${prod.tamaño}</h5>

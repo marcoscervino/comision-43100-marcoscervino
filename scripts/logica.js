@@ -1,6 +1,6 @@
 
 const carro = JSON.parse(localStorage.getItem("carro")) || [];
-console.log(carro);
+// console.log(carro);
 let contenedorProds = document.getElementById('misProds');
 let tablaBody = document.getElementById('tablabody');
 // RENDERIZADO DE CARDS DE LOS OBJETOS
@@ -45,7 +45,7 @@ contenedorProds.addEventListener("click", (event) => {
     }
   });
 
-//declaro la funcion ara agregar productos al carro
+//declaro la funcion para agregar productos al carro
   function AgregarACarro(producto) {
     carro.push(producto);
     console.table(carro);
@@ -79,7 +79,7 @@ function cargarCarro(productos) {
 
     // Calcular total del carro
     const total = productos.reduce((acumulador, elemento) => acumulador + elemento.precio, 0);
-    console.log(total);
+    //console.log(total);
 
     let totalCarro = document.getElementById("total");
     totalCarro.innerHTML = `Total a pagar $: ${total}`;

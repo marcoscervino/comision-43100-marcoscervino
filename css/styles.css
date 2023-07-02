@@ -32,6 +32,10 @@
 }
 
 /*cards*/
+.row{
+  --bs-gutter-x: 0rem !important;
+}
+
 @media (max-width: 765px){
   .card{
     width: 50% !important;

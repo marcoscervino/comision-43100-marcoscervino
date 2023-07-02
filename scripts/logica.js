@@ -1,6 +1,5 @@
 
 let carro = JSON.parse(localStorage.getItem("carro")) || [];
-// console.log(carro);
 let contenedorProds = document.getElementById('misProds');
 let tablaBody = document.getElementById('tablabody');
 const modalContainer = document.getElementById('modal-container');
@@ -76,9 +75,10 @@ function renderizarProductos(listaProds){
             <div class="card mt-3 mb-3 ms-2 mx-2 border-dark text-center col-md-2" >
                 <img class="card-img-top" src=${prod.foto} alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">${prod.nombre} x${prod.tamaño}</h5>
+                    <h5 class="card-title">${prod.nombre}</h5>
+                    <h5>x${prod.tamaño}</h5>
                     <p class="card-text">$ ${prod.precio}</p>
-                    <button id=${prod.id} class="btn btn-dark compra">Comprar</button>
+                    <button id=${prod.id} class="btn btn-dark btncompra">Comprar</button>
                 </div>
             </div>
         `;
@@ -105,6 +105,15 @@ contenedorProds.addEventListener("click", (event) => {
       console.log(prodACarro);
       // Cargar productos a carro
       AgregarACarro(prodACarro);
+      Swal.fire({
+        title: 'Genial!',
+        text: 'Agregaste ' + prodACarro.nombre + ' al carro!',
+        imageUrl: prodACarro.foto,
+        imageWidth: 300,
+        imageHeight: 300,
+        imageAlt: 'Imagen del producto',
+        confirmButtonColor: '#643A6B'
+      })
     }
   });
 

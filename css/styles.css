@@ -1,7 +1,7 @@
 .navbar {
-  height: 100px !important; /*i assume your navbar size 100px*/
   background-color: #212529 !important;
 }
+
 
 .navbar-brand{
     font-size: 25px;

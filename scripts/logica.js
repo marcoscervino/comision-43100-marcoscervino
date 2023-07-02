@@ -30,9 +30,8 @@ verCarro.addEventListener("click", () => {
         let carritoContent = document.createElement("div")
         carritoContent.className = "modal-content";
         carritoContent.innerHTML = `
-            <img src=${product.foto}">
-            <h3>${product.nombre}</h3>
-            <p>${product.precio}</p>
+            <h3>⚪ ${product.nombre} $${product.precio}</h3>
+            <p></p>
             <button type="button" class="btn btn-danger">X</button>
         `;
         modalContainer.append(carritoContent);

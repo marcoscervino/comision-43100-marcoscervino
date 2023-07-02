@@ -1,8 +1,71 @@
 
-const carro = JSON.parse(localStorage.getItem("carro")) || [];
+let carro = JSON.parse(localStorage.getItem("carro")) || [];
 // console.log(carro);
 let contenedorProds = document.getElementById('misProds');
 let tablaBody = document.getElementById('tablabody');
+const modalContainer = document.getElementById('modal-container');
+
+//VER CARRO
+const verCarro = document.getElementById("verCarro");
+verCarro.addEventListener("click", () => {
+    modalContainer.innerHTML = "";
+    modalContainer.style.display = "flex";
+    const modalHeader = document.createElement("div");
+    modalHeader.className = "modal-header"
+    modalHeader.innerHTML = `
+        <h1 class= "modal-header-title">Carrito</h1>
+    `;
+    modalContainer.append(modalHeader);
+    
+    const modalbutton = document.createElement("h1");
+    modalbutton.innerText = "x";
+    modalbutton.className = "modal-header-button";
+    
+    modalbutton.onclick = () =>{
+        modalContainer.style.display = "none";
+    };
+
+    modalHeader.append(modalbutton);
+
+    carro.forEach((product) =>{
+        let carritoContent = document.createElement("div")
+        carritoContent.className = "modal-content";
+        carritoContent.innerHTML = `
+            <img src=${product.foto}">
+            <h3>${product.nombre}</h3>
+            <p>${product.precio}</p>
+            <button type="button" class="btn btn-danger">X</button>
+        `;
+        modalContainer.append(carritoContent);
+        
+    });
+
+    const total = carro.reduce((acumulador, elemento,)=> acumulador + elemento.precio, 0)
+    console.log(total);
+    let totalCarro = document.createElement("div");
+    totalCarro.className = "total-content"
+    totalCarro.innerHTML = `<p id=totalAPagar> Total a pagar $: ${total}</p>
+    `;
+    modalContainer.append(totalCarro);
+    //guardar carro en el local storage
+    localStorage.setItem("carro", JSON.stringify(carro));
+
+    let botonFinalizar = document.createElement("div")
+        botonFinalizar.className = "finalizar-content";
+        botonFinalizar.innerHTML = `
+            <button type="button" id="finalizarCompra" class="btn btn-danger">Finalizar Compra</button>
+        `;
+        modalContainer.append(botonFinalizar);
+
+         //Finalizar la compra
+    const finalizarCompra = document.getElementById("finalizarCompra");
+    finalizarCompra.onclick = () =>{
+        carro=[];
+        totalCarro.innerHTML = `<p id=totalAPagar> Total a pagar $: 0</p>
+        `;
+        modalContainer.style.display = "none";
+    }
+});
 // RENDERIZADO DE CARDS DE LOS OBJETOS
 
 function renderizarProductos(listaProds){
@@ -49,40 +112,24 @@ contenedorProds.addEventListener("click", (event) => {
   function AgregarACarro(producto) {
     carro.push(producto);
     console.table(carro);
-    tablaBody.innerHTML += `
-        <tr>
-            <td>${producto.id}</td>
-            <td>${producto.nombre}</td>
-            <td>${producto.precio}</td>
-        </tr>
-    `;
+    
     //calcular total del carro
     const total = carro.reduce((acumulador, elemento,)=> acumulador + elemento.precio, 0)
     console.log(total);
-    let totalCarro = document.getElementById("total");
-    totalCarro.innerHTML = `Total a pagar $: ${total}`;
+
     //guardar carro en el local storage
     localStorage.setItem("carro", JSON.stringify(carro));
 
 }
 
 function cargarCarro(productos) {
-    productos.forEach((producto) => {
-        tablaBody.innerHTML += `
-            <tr>
-                <td>${producto.id}</td>
-                <td>${producto.nombre}</td>
-                <td>${producto.precio}</td>
-            </tr>
-        `;
-    });
+    
 
     // Calcular total del carro
     const total = productos.reduce((acumulador, elemento) => acumulador + elemento.precio, 0);
     //console.log(total);
 
-    let totalCarro = document.getElementById("total");
-    totalCarro.innerHTML = `Total a pagar $: ${total}`;
+    
 }
 
 // Cargo los productos guardados en el storage al DOM

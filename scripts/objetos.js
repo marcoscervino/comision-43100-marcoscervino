@@ -99,7 +99,7 @@ vodkas.push(new vodka (16, "Absolut","Absolut Raspberry", "750ml", 8200, "https:
 
 //Declaro un array de vinos y cargo elementos
 const vinos = [];
-vinos.push(new vino (17, "Luigi bosca","Luigi Bosca Malbec", "750ml", 4500, "https://i.postimg.cc/nzVtnSS2/luigibosca-malbec-750ml-v2.png"));
+vinos.push(new vino (17, "Luigi bosca","Luigi Bosca Malbec", "750ml", 5600, "https://i.postimg.cc/nzVtnSS2/luigibosca-malbec-750ml-v2.png"));
 vinos.push(new vino (18, "Luigi bosca","Luigi Bosca Cabernet Sauvignon", "750ml", 4400, "https://i.postimg.cc/zfrrcGn9/luigibosca-cabernet-750ml-v2.png"));
 vinos.push(new vino (19, "Nieto senetiner","Nieto Senetiner Malbec", "750ml", 3200, "https://i.postimg.cc/s24rdCm1/nietosenetiner-malbec-750ml-v2.png"));
 vinos.push(new vino (20, "Trumpeter","Trumpeter Cabernet Franc", "750ml", 4500, "https://i.postimg.cc/N0Y3xPtt/trumpeter-malbec-750ml-v2.png"));

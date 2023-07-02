@@ -38,9 +38,9 @@
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" id="filtroNombre" type="search" placeholder="Buscar" aria-label="Search">
-              <button class="btn btn-outline-secondary" id="botonNombre" type="submit">🔎</button>
-              <button class="btn btn-outline-secondary btncarro" type="submit"><a href="./pages/carrito.html">🛒</a></button>
+              <button class="btn btn-outline-secondary btnBuscar" id="botonNombre" type="submit">🔎</button>
             </form>
+            <button class="btn btn-outline-secondary btncarro" id="verCarro">🛒</button>
           </div>
         </div>
         
@@ -53,22 +53,10 @@
 
         </section>
 
-        <section>
-          <h4>Tu Carrito:</h4>
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Precio</th>
-              </tr>
-            </thead>
-            <tbody id="tablabody">
-              <!-- Aca los prod del carro -->
-            </tbody>
-          </table>
-          <h4 id="total">Total a pagar $:</h4>
-        </section>
+        <!-- Contenedor carro-->
+        <div id="modal-container" class="modal-container"></div>
+
+       
     </main>
 
     <footer>

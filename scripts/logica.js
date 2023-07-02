@@ -52,7 +52,7 @@ verCarro.addEventListener("click", () => {
     let botonFinalizar = document.createElement("div")
         botonFinalizar.className = "finalizar-content";
         botonFinalizar.innerHTML = `
-            <button type="button" id="finalizarCompra" class="btn btn-danger">Finalizar Compra</button>
+            <button type="button" id="finalizarCompra" class="btn btn-success">Finalizar Compra</button>
         `;
         modalContainer.append(botonFinalizar);
 
@@ -78,7 +78,7 @@ function renderizarProductos(listaProds){
                     <h5 class="card-title">${prod.nombre}</h5>
                     <h5>x${prod.tamaño}</h5>
                     <p class="card-text">$ ${prod.precio}</p>
-                    <button id=${prod.id} class="btn btn-dark btncompra">Comprar</button>
+                    <button id=${prod.id} class="btn btn-dark compra">Comprar</button>
                 </div>
             </div>
         `;
@@ -112,7 +112,7 @@ contenedorProds.addEventListener("click", (event) => {
         imageWidth: 300,
         imageHeight: 300,
         imageAlt: 'Imagen del producto',
-        confirmButtonColor: '#643A6B'
+        confirmButtonColor: '#212529'
       })
     }
   });

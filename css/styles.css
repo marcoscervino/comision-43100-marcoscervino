@@ -34,7 +34,7 @@
 /*cards*/
 @media (max-width: 765px){
   .card{
-    width: 50%;
+    width: 50% !important;
   }
 }
 

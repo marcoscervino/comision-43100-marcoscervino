@@ -26,20 +26,31 @@ verCarro.addEventListener("click", () => {
 
     modalHeader.append(modalbutton);
 
-    carro.forEach((product) =>{
-        let carritoContent = document.createElement("div")
-        carritoContent.className = "modal-content";
+    carro.forEach((product, index) => {
+        let carritoContent = document.createElement("div");
+        carritoContent.className = "modal-content row";
         carritoContent.innerHTML = `
-            <h3>⚪ ${product.nombre} $${product.precio}</h3>
-            <p></p>
-            <button type="button" class="btn btn-danger">X</button>
+          <p class="col-6">◻ ${product.nombre} </p>
+          <div class="col-1"> <p> $${product.precio} </p> </div>
+          <div class="col-1"><button type="button" class="btnEliminar btn btn-danger" data-index="${index}">X</button></div>
         `;
         modalContainer.append(carritoContent);
-        
-    });
+      
+        const btnEliminar = carritoContent.querySelector(".btnEliminar");
+        btnEliminar.onclick = (event) => {
+          const productIndex = parseInt(event.target.dataset.index); // Obtiene el índice del producto
+          carro.splice(productIndex, 1); // Elimina el producto del array del carro
+          carritoContent.remove(); // Elimina el contenido del carrito en la interfaz
+      
+          const total = carro.reduce((acumulador, elemento) => acumulador + elemento.precio, 0); // Recalcula el total
+          totalCarro.className = "total-content";
+          totalCarro.innerHTML = `<p id="totalAPagar">Total a pagar $: ${total}</p>`;
+          modalContainer.append(totalCarro);
+          console.log(carro);
+        };
+      });
 
     const total = carro.reduce((acumulador, elemento,)=> acumulador + elemento.precio, 0)
-    console.log(total);
     let totalCarro = document.createElement("div");
     totalCarro.className = "total-content"
     totalCarro.innerHTML = `<p id=totalAPagar> Total a pagar $: ${total}</p>
@@ -58,10 +69,31 @@ verCarro.addEventListener("click", () => {
          //Finalizar la compra
     const finalizarCompra = document.getElementById("finalizarCompra");
     finalizarCompra.onclick = () =>{
-        carro=[];
-        totalCarro.innerHTML = `<p id=totalAPagar> Total a pagar $: 0</p>
-        `;
-        modalContainer.style.display = "none";
+        Swal.fire({
+            title: '¿Deseas finalizar tu compra?',
+            text: "Una vez finalizada, recibiras tu pedido dentro de las proximas 48hs",
+            icon: 'warning',
+            showCancelButton: true,
+            cancelButtonText: 'Cancelar',
+            cancelButtonColor: '#d33',
+            confirmButtonColor: '#198754',
+            confirmButtonText: 'Comprar!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Genial!',
+                'Enviaremos tu pedido lo antes posible.',
+                'success'
+              )
+              carro=[];
+                totalCarro.innerHTML = `<p id=totalAPagar> Total a pagar $: 0</p>
+                `;
+                modalContainer.style.display = "none";
+            }
+          })
+
+
+        
     }
 });
 // RENDERIZADO DE CARDS DE LOS OBJETOS
@@ -92,7 +124,6 @@ renderizarProductos(vodkas);
 renderizarProductos(vinos);
 
 
-
 // Agrega el evento click fuera del bucle de renderizarProductos
 contenedorProds.addEventListener("click", (event) => {
     const target = event.target;
@@ -101,7 +132,8 @@ contenedorProds.addEventListener("click", (event) => {
       const prodACarro = [...cervezas, ...gaseosas, ...gines, ...vodkas, ...vinos].find(
         (producto) => producto.id === prodId
       );
-      console.log(prodACarro);
+      prodACarro.contador += 1
+      console.log(prodACarro.contador);
       // Cargar productos a carro
       AgregarACarro(prodACarro);
       Swal.fire({
@@ -119,7 +151,6 @@ contenedorProds.addEventListener("click", (event) => {
 //declaro la funcion para agregar productos al carro
   function AgregarACarro(producto) {
     carro.push(producto);
-    console.table(carro);
     
     //calcular total del carro
     const total = carro.reduce((acumulador, elemento,)=> acumulador + elemento.precio, 0)

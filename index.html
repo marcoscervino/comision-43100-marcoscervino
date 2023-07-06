@@ -11,7 +11,7 @@
   <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Best Bar 🍷</a>
+          <a class="navbar-brand" href="#"><img src="./assets/logo/best-bar-logo.png" alt=""></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -48,15 +48,49 @@
 </header>
 
     <main>
+      <div class="containerCarr">
+        <!--carrousel-->
+        <div class="container-sm ">
+        <div id="carouselExample" class="carousel slide container-sm">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./assets/carrousel/absolut-carr-v3.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/carrousel/beefeater-carr-v3.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/carrousel/smirnoff-carr-v3.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/carrousel/stella-carr-v3.png" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      </div>
+
         <section id="misProds" class="productos row justify-content-center">
             <!-- Aca se cargan los productos -->
 
         </section>
 
         <!-- Contenedor carro-->
-        <div id="modal-container" class="modal-container"></div>
+        <div id="modal-container" class="modal-container">
 
-       
+        </div>
+
+    
+
+    
     </main>
 
     <footer>
@@ -66,7 +100,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6 col-md-3 item">
-                            <h3>About</h3>
+                            <h3>About us</h3>
                             <ul>
                                 <li><a href="./pages/nosotros.html">Nosotros</a></li>
                             </ul>
@@ -75,15 +109,20 @@
                             <h3>Best Bar 🍷</h3>
                             <p>El lugar perfecto para satisfacer tus gustos y sed de sabores únicos. Nuestro amplio catálogo incluye una cuidadosa selección de bebidas de alta calidad, desde refrescantes aguas y jugos naturales hasta vinos finos y cervezas artesanales.</p>
                         </div>
-                        <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                        <div class="col item social">
+                          <a href="#"><img src="./assets/icons/facebook-circle-logo-24.png" alt="facebook"></a>
+                          <a href="#"><img src="./assets/icons/twitter-logo-24.png" alt="twitter"></a>
+                          <a href="#"><img src="./assets/icons/tiktok-logo-24.png" alt="tiktok"></a>
+                          <a href="#"><img src="./assets/icons/instagram-alt-logo-24.png" alt="instagram"></a></div>
                     </div>
-                    <p class="copyright">Best Bar 🍷 © 2018</p>
+                    <p class="copyright">Marcos Cervino © 2023</p>
                 </div>
             </footer>
         </div>
       </footer>
     </footer>
-    <script src="./scripts/objetos.js"></script>
+    
+    <script src="./scripts/objects.js"></script>
     <script src="./scripts/logica.js"></script>
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>

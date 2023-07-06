@@ -217,11 +217,13 @@ const totalProds = cervezas.concat(gaseosas, gines, vodkas, vinos);
 
 
 function filtrarNombres(nombre) {
-    const filtrados = totalProds.filter((producto) => producto.nombre.includes(nombre));
+    const filtrados = totalProds.filter((producto) => producto.nombre.toLowerCase().includes(nombre.toLowerCase()));
     return filtrados;
 }
 
 botonBuscar.onclick = () => {
+    event.preventDefault();
+
     let listaFiltrados = filtrarNombres(filtroNombre.value);
     contenedorProds.innerHTML= "";
     renderizarProductos(listaFiltrados);

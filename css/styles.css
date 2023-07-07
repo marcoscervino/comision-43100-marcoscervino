@@ -1,3 +1,5 @@
+
+/*NAVBAR*/
 .navbar {
   background-color: #212529 !important;
 }
@@ -23,18 +25,33 @@
 }
 
 /*MAIN*/
+.titleIndex{
+  color: #ffffff;
+  font-size: 3rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
 .containerCarr{
   background-color: black;
   padding: 1rem;
 }
 
 .productos{
-  background-color: #5F264A;
+  background-color: #5f262e;
 }
 
 .compra{
   width: 100%;
 }
+
+.backgrondNosotros{
+  background-color: #0a0909;
+}
+
+.backgrondNosotros div h1{
+  color: #fff;
+}
+
 
 /*cards*/
 .row{
@@ -97,6 +114,7 @@
 .modal-content > div > img{
   height: 120px;
   width: 120px;
+  border-radius: 10px;
 }
 
 .total-content{

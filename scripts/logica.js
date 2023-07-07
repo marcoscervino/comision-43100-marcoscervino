@@ -30,22 +30,21 @@ verCarro.addEventListener("click", () => {
         let carritoContent = document.createElement("div");
         carritoContent.className = "modal-content row";
         carritoContent.innerHTML = `
-          <p class="col-6">◻ ${product.nombre} </p>
-          <div class="col-1"> <p> $${product.precio} </p> </div>
+        <div class="col-1"><img class="imgCarro=" src="${product.foto}"></div>
+          <p class="col-6">◽${product.nombre}</p>
+          <div class="col-1"> <p>$${product.precio}</p> </div>
           <div class="col-1"><button type="button" class="btnEliminar btn btn-danger" data-index="${index}">X</button></div>
         `;
         modalContainer.append(carritoContent);
       
         const btnEliminar = carritoContent.querySelector(".btnEliminar");
         btnEliminar.onclick = (event) => {
-          const productIndex = parseInt(event.target.dataset.index); // Obtiene el índice del producto
-          carro.splice(productIndex, 1); // Elimina el producto del array del carro
+          const productIndex = parseInt(event.target.dataset.index);
           carritoContent.remove(); // Elimina el contenido del carrito en la interfaz
-      
-          const total = carro.reduce((acumulador, elemento) => acumulador + elemento.precio, 0); // Recalcula el total
-          totalCarro.className = "total-content";
+          carro.splice(productIndex, 1); // Elimina el producto del array del carro
+        
+          const total = carro.reduce((acumulador, elemento) => acumulador + elemento.precio, 0);
           totalCarro.innerHTML = `<p id="totalAPagar">Total a pagar $: ${total}</p>`;
-          modalContainer.append(totalCarro);
           console.log(carro);
         };
       });
@@ -166,7 +165,6 @@ function cargarCarro(productos) {
 
     // Calcular total del carro
     const total = productos.reduce((acumulador, elemento) => acumulador + elemento.precio, 0);
-    //console.log(total);
 
     
 }
@@ -217,7 +215,7 @@ const totalProds = cervezas.concat(gaseosas, gines, vodkas, vinos);
 
 
 function filtrarNombres(nombre) {
-    const filtrados = totalProds.filter((producto) => producto.nombre.toLowerCase().includes(nombre.toLowerCase()));
+    const filtrados = totalProds.filter((producto) => producto.nombre.toLowerCase().includes(nombre.toLowerCase()) );
     return filtrados;
 }
 

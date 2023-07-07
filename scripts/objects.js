@@ -2,6 +2,7 @@ const cervezas = [{
     id: 1,
     marca: "Heineken",
     nombre: "Heineken Rubia",
+    categoria: "cervezas",
     tamaño: "473ml",
     precio: 360,
     foto: "https://i.postimg.cc/qvnrw3Cs/heineken-x473-v2.png",

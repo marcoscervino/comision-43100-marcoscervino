@@ -31,7 +31,7 @@ verCarro.addEventListener("click", () => {
         carritoContent.className = "modal-content row";
         carritoContent.innerHTML = `
         <div class="col-1"><img class="imgCarro=" src="${product.foto}"></div>
-          <p class="col-6">◽${product.nombre}</p>
+          <p class="col-5">◽${product.nombre}</p>
           <div class="col-1"> <p>$${product.precio}</p> </div>
           <div class="col-1"><button type="button" class="btnEliminar btn btn-danger" data-index="${index}">X</button></div>
         `;
@@ -45,7 +45,6 @@ verCarro.addEventListener("click", () => {
         
           const total = carro.reduce((acumulador, elemento) => acumulador + elemento.precio, 0);
           totalCarro.innerHTML = `<p id="totalAPagar">Total a pagar $: ${total}</p>`;
-          console.log(carro);
         };
       });
 
@@ -132,7 +131,6 @@ contenedorProds.addEventListener("click", (event) => {
         (producto) => producto.id === prodId
       );
       prodACarro.contador += 1
-      console.log(prodACarro.contador);
       // Cargar productos a carro
       AgregarACarro(prodACarro);
       Swal.fire({
@@ -153,7 +151,6 @@ contenedorProds.addEventListener("click", (event) => {
     
     //calcular total del carro
     const total = carro.reduce((acumulador, elemento,)=> acumulador + elemento.precio, 0)
-    console.log(total);
 
     //guardar carro en el local storage
     localStorage.setItem("carro", JSON.stringify(carro));

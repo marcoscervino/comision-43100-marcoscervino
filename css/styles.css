@@ -132,7 +132,11 @@
 div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
   background-color: #212529 ;
 }
-
+@media (max-width: 1110px){
+  .modal-content > div > img {
+    display: none;
+}
+}
 /*FOOTER*/
 .footer-dark {
     padding: 50px 0;

@@ -1,0 +1,38 @@
+ [
+  {
+    "id": 13,
+    "marca": "Smirnoff",
+    "nombre": "Smirnoff Clasic",
+    "tamaño": "700ml",
+    "precio": 3560,
+    "foto": "https://i.postimg.cc/8c98BppX/smirnoff-clasic-1l-v2.png",
+    "contador": 0
+  },
+  {
+    "id": 14,
+    "marca": "Smirnoff",
+    "nombre": "Smirnoff Apple",
+    "tamaño": "700ml",
+    "precio": 3950,
+    "foto": "https://i.postimg.cc/52cdX2k6/smirnoff-green-1l-v2.png",
+    "contador": 0
+  },
+  {
+    "id": 15,
+    "marca": "Absolut",
+    "nombre": "Absolut Clasic",
+    "tamaño": "750ml",
+    "precio": 7500,
+    "foto": "https://i.postimg.cc/7ZTHRRjT/absolut-clasico-vodka1-L.jpg",
+    "contador": 0
+  },
+  {
+    "id": 16,
+    "marca": "Absolut",
+    "nombre": "Absolut Raspberry",
+    "tamaño": "750ml",
+    "precio": 8200,
+    "foto": "https://i.postimg.cc/tTDpPGn8/absolut-rasp1-L-v2.png",
+    "contador": 0
+  }
+]

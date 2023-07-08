@@ -1,0 +1,38 @@
+ [
+  {
+    "id": 5,
+    "marca": "Schweppes",
+    "nombre": "Schweppes Pomelo",
+    "tamaño": "1500ml",
+    "precio": 460,
+    "foto": "https://i.postimg.cc/rmh2sGvk/schweppes-pomelo-15l.jpg",
+    "contador": 0
+  },
+  {
+    "id": 6,
+    "marca": "Schweppes",
+    "nombre": "Schweppes Tonica",
+    "tamaño": "1500ml",
+    "precio": 430,
+    "foto": "https://i.postimg.cc/mktfHzsF/schweppes-tonica-15l-v2.png",
+    "contador": 0
+  },
+  {
+    "id": 7,
+    "marca": "Coca Cola",
+    "nombre": "Coca Cola Clasica",
+    "tamaño": "1500ml",
+    "precio": 510,
+    "foto": "https://i.postimg.cc/sDMsB8j0/cocacola-15l-v2.png",
+    "contador": 0
+  },
+  {
+    "id": 8,
+    "marca": "Coca Cola",
+    "nombre": "Coca Cola Zero",
+    "tamaño": "1500ml",
+    "precio": 490,
+    "foto": "https://i.postimg.cc/prTxJcDr/cocazero-15l-v2.png",
+    "contador": 0
+  }
+]

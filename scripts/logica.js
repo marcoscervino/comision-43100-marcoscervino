@@ -1,3 +1,13 @@
+let cervezas;
+let gaseosas;
+let gines;
+let vodkas;
+let vinos;
+obtenerJsonCervezas();
+obtenerJsonGaseosas();
+obtenerJsonGines();
+obtenerJsonVodkas();
+obtenerJsonVinos();
 
 let carro = JSON.parse(localStorage.getItem("carro")) || [];
 let contenedorProds = document.getElementById('misProds');
@@ -115,11 +125,6 @@ function renderizarProductos(listaProds){
 
 }
 
-renderizarProductos(cervezas);
-renderizarProductos(gaseosas);
-renderizarProductos(gines);
-renderizarProductos(vodkas);
-renderizarProductos(vinos);
 
 
 // Agrega el evento click fuera del bucle de renderizarProductos
@@ -224,3 +229,52 @@ botonBuscar.onclick = () => {
     renderizarProductos(listaFiltrados);
     console.log(listaFiltrados);
 };
+
+
+async function obtenerJsonCervezas(){
+  const URLCERVEZAS = "./scripts/cervezas.json"; 
+  const respuesta = await fetch(URLCERVEZAS);
+  const data =  await respuesta.json();
+  console.log(data);
+  cervezas = data;
+  renderizarProductos(cervezas);
+}
+
+async function obtenerJsonGaseosas(){
+  const URLGASEOSAS = './scripts/gaseosas.json'
+  const respuesta = await fetch(URLGASEOSAS);
+  const data =  await respuesta.json();
+  console.log(data);
+  gaseosas = data;
+  renderizarProductos(gaseosas);
+}
+
+async function obtenerJsonGines(){
+  const URLGINES = './scripts/gines.json';
+  const respuesta = await fetch(URLGINES);
+  const data =  await respuesta.json();
+  console.log(data);
+  gines = data;
+  renderizarProductos(gines);
+}
+
+async function obtenerJsonVodkas(){
+  const URLVODKAS = './scripts/vodkas.json';
+  const respuesta = await fetch(URLVODKAS);
+  const data =  await respuesta.json();
+  console.log(data);
+  vodkas = data;
+  renderizarProductos(vodkas);
+}
+
+async function obtenerJsonVinos(){
+  const URLVINOS = './scripts/vinos.json';
+  const respuesta = await fetch(URLVINOS);
+  const data =  await respuesta.json();
+  console.log(data);
+  vinos = data;
+  renderizarProductos(vinos);
+}
+
+
+

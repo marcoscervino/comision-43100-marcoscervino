@@ -1,0 +1,38 @@
+ [
+  {
+    "id": 9,
+    "marca": "Gordons",
+    "nombre": "Gordons Clasic",
+    "tamaño": "700ml",
+    "precio": 2600,
+    "foto": "https://i.postimg.cc/HsFHb2jW/gordonsgin-750ml-v2.png",
+    "contador": 0
+  },
+  {
+    "id": 10,
+    "marca": "Beefeater",
+    "nombre": "Beefeater Clasic",
+    "tamaño": "1000ml",
+    "precio": 5040,
+    "foto": "https://i.postimg.cc/DZ778w0q/beefeater-clasic-1-L.png",
+    "contador": 0
+  },
+  {
+    "id": 11,
+    "marca": "Beefeater",
+    "nombre": "Beefeater Orange",
+    "tamaño": "1000ml",
+    "precio": 7040,
+    "foto": "https://i.postimg.cc/W4G2NkNN/beefeater-orange-1l-v2.jpg",
+    "contador": 0
+  },
+  {
+    "id": 12,
+    "marca": "Brighton",
+    "nombre": "Brighton Clasic",
+    "tamaño": "1000ml",
+    "precio": 2190,
+    "foto": "https://i.postimg.cc/zvcNtwjj/brighton-700-v2.png",
+    "contador": 0
+  }
+]

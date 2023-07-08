@@ -1,0 +1,38 @@
+ [
+  {
+    "id": 17,
+    "marca": "Luigi Bosca",
+    "nombre": "Luigi Bosca Malbec",
+    "tamaño": "750ml",
+    "precio": 5600,
+    "foto": "https://i.postimg.cc/nzVtnSS2/luigibosca-malbec-750ml-v2.png",
+    "contador": 0
+  },
+  {
+    "id": 18,
+    "marca": "Luigi Bosca",
+    "nombre": "Luigi Bosca Cabernet Sauvignon",
+    "tamaño": "750ml",
+    "precio": 4400,
+    "foto": "https://i.postimg.cc/zfrrcGn9/luigibosca-cabernet-750ml-v2.png",
+    "contador": 0
+  },
+  {
+    "id": 19,
+    "marca": "Nieto senetiner",
+    "nombre": "Nieto Senetiner Malbec",
+    "tamaño": "750ml",
+    "precio": 3200,
+    "foto": "https://i.postimg.cc/s24rdCm1/nietosenetiner-malbec-750ml-v2.png",
+    "contador": 0
+  },
+  {
+    "id": 20,
+    "marca": "Trumpeter",
+    "nombre": "Trumpeter Cabernet Franc",
+    "tamaño": "750ml",
+    "precio": 4500,
+    "foto": "https://i.postimg.cc/N0Y3xPtt/trumpeter-malbec-750ml-v2.png",
+    "contador": 0
+  }
+]

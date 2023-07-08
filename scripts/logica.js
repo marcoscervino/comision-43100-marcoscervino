@@ -213,7 +213,29 @@ let filtroNombre = document.getElementById("filtroNombre");
 let botonBuscar = document.getElementById("botonNombre");
 
 //combino todos los array en uno solo
-const totalProds = cervezas.concat(gaseosas, gines, vodkas, vinos);
+
+
+let totalProds = [];
+
+if (cervezas) {
+  totalProds = totalProds.concat(cervezas);
+}
+
+if (gaseosas) {
+  totalProds = totalProds.concat(gaseosas);
+}
+
+if (gines) {
+  totalProds = totalProds.concat(gines);
+}
+
+if (vodkas) {
+  totalProds = totalProds.concat(vodkas);
+}
+
+if (vinos) {
+  totalProds = totalProds.concat(vinos);
+}
 
 
 function filtrarNombres(nombre) {

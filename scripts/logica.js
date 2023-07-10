@@ -99,9 +99,6 @@ verCarro.addEventListener("click", () => {
                 modalContainer.style.display = "none";
             }
           })
-
-
-        
     }
 });
 // RENDERIZADO DE CARDS DE LOS OBJETOS
@@ -122,10 +119,7 @@ function renderizarProductos(listaProds){
             </div>
         `;
     }
-
 }
-
-
 
 // Agrega el evento click fuera del bucle de renderizarProductos
 contenedorProds.addEventListener("click", (event) => {
@@ -159,16 +153,12 @@ contenedorProds.addEventListener("click", (event) => {
 
     //guardar carro en el local storage
     localStorage.setItem("carro", JSON.stringify(carro));
-
 }
 
 function cargarCarro(productos) {
     
-
     // Calcular total del carro
     const total = productos.reduce((acumulador, elemento) => acumulador + elemento.precio, 0);
-
-    
 }
 
 // Cargo los productos guardados en el storage al DOM
@@ -214,36 +204,29 @@ let botonBuscar = document.getElementById("botonNombre");
 
 //combino todos los array en uno solo
 
-
 let totalProds = [];
 
-if (cervezas) {
-  totalProds = totalProds.concat(cervezas);
+async function obtenerDatos() {
+  await Promise.all([
+    obtenerJsonCervezas(),
+    obtenerJsonGaseosas(),
+    obtenerJsonGines(),
+    obtenerJsonVodkas(),
+    obtenerJsonVinos()
+  ]);
+  totalProds = [...cervezas, ...gaseosas, ...gines, ...vodkas, ...vinos];
 }
 
-if (gaseosas) {
-  totalProds = totalProds.concat(gaseosas);
-}
+// Llamamos a la función obtenerDatos
+obtenerDatos();
 
-if (gines) {
-  totalProds = totalProds.concat(gines);
-}
-
-if (vodkas) {
-  totalProds = totalProds.concat(vodkas);
-}
-
-if (vinos) {
-  totalProds = totalProds.concat(vinos);
-}
-
-
+// filtramos los profuctos por nombre
 function filtrarNombres(nombre) {
     const filtrados = totalProds.filter((producto) => producto.nombre.toLowerCase().includes(nombre.toLowerCase()) );
     return filtrados;
 }
 
-botonBuscar.onclick = () => {
+botonBuscar.onclick = (event) => {
     event.preventDefault();
 
     let listaFiltrados = filtrarNombres(filtroNombre.value);
@@ -252,12 +235,11 @@ botonBuscar.onclick = () => {
     console.log(listaFiltrados);
 };
 
-
+// cargo los productos desde JSON
 async function obtenerJsonCervezas(){
   const URLCERVEZAS = "./scripts/cervezas.json"; 
   const respuesta = await fetch(URLCERVEZAS);
   const data =  await respuesta.json();
-  console.log(data);
   cervezas = data;
   renderizarProductos(cervezas);
 }
@@ -266,7 +248,6 @@ async function obtenerJsonGaseosas(){
   const URLGASEOSAS = './scripts/gaseosas.json'
   const respuesta = await fetch(URLGASEOSAS);
   const data =  await respuesta.json();
-  console.log(data);
   gaseosas = data;
   renderizarProductos(gaseosas);
 }
@@ -275,7 +256,6 @@ async function obtenerJsonGines(){
   const URLGINES = './scripts/gines.json';
   const respuesta = await fetch(URLGINES);
   const data =  await respuesta.json();
-  console.log(data);
   gines = data;
   renderizarProductos(gines);
 }
@@ -284,7 +264,6 @@ async function obtenerJsonVodkas(){
   const URLVODKAS = './scripts/vodkas.json';
   const respuesta = await fetch(URLVODKAS);
   const data =  await respuesta.json();
-  console.log(data);
   vodkas = data;
   renderizarProductos(vodkas);
 }
@@ -293,10 +272,6 @@ async function obtenerJsonVinos(){
   const URLVINOS = './scripts/vinos.json';
   const respuesta = await fetch(URLVINOS);
   const data =  await respuesta.json();
-  console.log(data);
   vinos = data;
   renderizarProductos(vinos);
 }
-
-
-
